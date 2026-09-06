@@ -3,6 +3,8 @@
 #include<cassert>
 #include<iostream>
 #include<cmath>
+#include<string>
+#include<vector>
 #include<functional>
 #include<algorithm>
 #include<cstring>

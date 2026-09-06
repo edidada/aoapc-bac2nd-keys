@@ -56,8 +56,8 @@ void initBones() { // 记录所有的骨牌及其编号
 }
 
 int isBone(int p1, int p2) { // 找到面值可能为(p1, p2)或者(p2, p2)的骨牌编号
-    // if(p1 > p2) return findBone(p2, p1);
-    return boneIndice[p1][p2] != -1;
+    // if(p1 > p2) return isBone(p2, p1);
+    return boneIndice[p1][p2];
 }
 
 // int findBone(int p1, int p2) { // 找到面值可能为(p1, p2)或者(p2, p2)的骨牌编号
@@ -92,7 +92,7 @@ void solve(const Point& pos, set<int> usedBones, int& ansCnt) {
     
     // 水平放骨牌
     if(c+1 < COL && Result[r][c+1] == -1) {
-        int b = findBone(Grid[r][c], Grid[r][c+1]);
+        int b = isBone(Grid[r][c], Grid[r][c+1]);
         if(b != -1 && !usedBones.count(b)) {
             np = pos;
             usedBones.insert(b);
@@ -109,7 +109,7 @@ void solve(const Point& pos, set<int> usedBones, int& ansCnt) {
     // 垂直放骨牌
     if(r+1 < ROW) {
         assert(Result[r+1][c] == -1);
-        int b = findBone(Grid[r][c], Grid[r+1][c]);
+        int b = isBone(Grid[r][c], Grid[r+1][c]);
         if(b != -1 && !usedBones.count(b)) {
             np = pos;
             usedBones.insert(b);

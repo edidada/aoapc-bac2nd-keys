@@ -7,6 +7,18 @@ https://space.bilibili.com/208090093
 
 > 算法竞赛入门经典第二版(以下简称"经典")
 
+## 本地编译
+
+每个 `.cc` / `.cpp` 都是一个独立的完整程序，使用 CMake 即可一键编译全部题解：
+
+```bash
+cmake -S . -B build          # 配置（默认编译全部，含 contrib/）
+cmake --build build -j       # 编译
+cmake --build build --target ch03_UVa1585   # 只编译某一题
+```
+
+可执行文件输出在 `build/bin/`。GitHub CI（`.github/workflows/build.yml`）会在每次 push 时验证所有题解可以编译通过。
+
 ## 《经典》习题代码
 
 - [2.1 第 3 章 数组和字符串](ch03)

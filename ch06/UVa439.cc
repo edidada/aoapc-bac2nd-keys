@@ -35,7 +35,7 @@ int solve(const Point &from, const Point &to) {
     q.push(from);
     vis[from.x][from.y] = 0;
     while(!q.empty()) {
-        const Point &f = q.front(); q.pop();Ï
+        const Point &f = q.front(); q.pop();
         int d = vis[f.x][f.y];
         if(f == to) return d;
         _for(i, 0, N) {

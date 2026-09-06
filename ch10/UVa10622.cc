@@ -33,7 +33,7 @@ int solve(int n) {
     // 唯一分解
     for(auto p : primes) {
         int k = 0; // p对应的在唯一分解中的次数
-        while(n%p == 0) n /= p, pp++;
+        while(n%p == 0) n /= p, k++;
         if(k) ks.push_back(k);
     }
     sort(ks.begin(), ks.end());
